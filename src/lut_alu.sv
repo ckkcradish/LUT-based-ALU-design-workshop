@@ -76,9 +76,9 @@ module lut_alu (
         pp = Pf(opcode, A, B);
         gg = Gf(opcode, A, B);
 
-        // Carry-in selection for the 0-th bit
+        // Carry-in selection for the 0-th bit for differnet types of operation
         case({opcode[7], opcode[6]})
-            2'b00   : Ci[0] = 1'b0;
+            2'b00   : Ci[0] = 1'b0; // for bit wise logic operation (and, or, xor....)
             2'b01   : Ci[0] = 1'b1;
             2'b10, 
             2'b11   : Ci[0] = CI;
