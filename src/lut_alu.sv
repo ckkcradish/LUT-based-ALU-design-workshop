@@ -34,7 +34,7 @@ module lut_alu (
     // Internal signal declarations (adjusted for 8-bit)
     logic [7:0] P, G, Ci;
     reg [7:0]   z_d;
-    reg         po_d;
+    //reg         po_d;
     reg         co_d;
     logic [7:0] pp, gg;
 
