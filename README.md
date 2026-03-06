@@ -1,4 +1,4 @@
-# LUT-based-ALU-design
+# LUT-based-ALU-design-Workshop
 A LUT-based ALU design using Systemverilog. For SJSU IEEE Digital Workshop of ALU design.
 
 src/lut_alu.sv : The lut-based alu design code. <br>
