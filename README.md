@@ -17,9 +17,9 @@ Simulation Result (TCL Log):
 [ADDC] A: 127 B: 127 CI:1 | Z: 255 (Hex:ff) CO:0 <br>
 
 --- Testing SUB (A - B) --- <br>
-[ SUB] A:  10 B:   5  CI:0 | Z:   5 (Hex:05) CO:1 <br>                             
+[ SUB] A:  10 B:   5  CI:0 | Z:   5 (Hex:05) CO:1 <br> 
 [ SUB] A:   5 B:  10  CI:0 | Z:  -5 (Hex:fb) CO:0 <-- Negative result (Borrow) <br>
-[ SUB] A: 100 B: 100  CI:0 | Z:   0 (Hex:00) CO:1 <br>                             
+[ SUB] A: 100 B: 100  CI:0 | Z:   0 (Hex:00) CO:1 <br>
 [ SUB] A:   0 B:   1  CI:0 | Z:  -1 (Hex:ff) CO:0 <-- Negative result (Borrow) <br>
 
 --- Testing SUBR (B - A) --- <br>
