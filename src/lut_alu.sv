@@ -1,6 +1,7 @@
 // The following opcodes are mapped to [9:8] Ci, [7:4] G, [3:0] P
 // ADD  : 10'b00_0001_0110  (A + B)
 // ADDC : 10'b10_0001_0110  (A + B + CI)
+// SUB  : 10'b01_0010_1001  (A - B)
 // SUBR : 10'b01_0100_1001  (B - A)
 // XOR  : 10'b00_0000_0110  (A ^ B)
 // XNOR : 10'b00_0000_1001  ~(A ^ B)
@@ -64,7 +65,7 @@ module lut_alu (
         // Carry-in selection (using opcode[9:8])
         case(opcode[9:8])
             2'b00   : Ci[0] = 1'b0; // For bitwise logic or basic ADD
-            2'b01   : Ci[0] = 1'b1; // For SUBR (+1 for 2's complement)
+            2'b01   : Ci[0] = 1'b1; // For SUB and SUBR (+1 for 2's complement)
             2'b10, 
             2'b11   : Ci[0] = CI;   // External carry-in for ADDC
             default : Ci[0] = 1'bX;
@@ -86,8 +87,8 @@ module lut_alu (
             Z  <= 8'h00;
             CO <= 1'b0;
         end else begin
-            Z  <= #1 z_d;
-            CO <= #1 co_d;
+            Z  <=  z_d;
+            CO <=  co_d;
         end
     end
 
